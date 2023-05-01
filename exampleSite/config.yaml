@@ -7,7 +7,7 @@ languageCode: en-US
 # If you write Chinese, Japanese or Korean, this helps with word counting
 hasCJKLanguage: true
 # The url of your website
-baseurl: "https://example.com/"
+baseurl: "https://huto-tufte.netlify.app/"
 # The title of your website (shown on all the pages)
 title: "Hugo-Tufte Theme Example Site"
 canonifyurls: true
