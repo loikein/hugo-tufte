@@ -1,8 +1,7 @@
-# Remove this if your site folder is not inside the theme folder
-themesDir: "../../"
-
 # Set your theme here
 theme: hugo-tufte
+# Remove this if your site folder is not inside the theme folder
+themesDir: "../.."
 # The language of your website (see https://www.andiamo.co.uk/resources/iso-language-codes/ for reference)
 languageCode: en-US
 # If you write Chinese, Japanese or Korean, this helps with word counting
