@@ -1,8 +1,8 @@
 name = "Tufte"
 license = "MIT"
-licenselink = "https://github.com/slashformotion/hugo-tufte/blob/master/LICENSE.md"
+licenselink = "https://github.com/loikein/hugo-tufte/blob/main/LICENSE.md"
 description = "A minimalist blog theme using Tufte-css."
-homepage = "https://github.com/slashformotion/hugo-tufte"
+homepage = "https://github.com/loikein/hugo-tufte"
 demo = "https://slashformotion.github.io/hugo-tufte/"
 tags = ["blog", "tufte", "minimal", 'light', "personal"]
 features = ["math", "tufte-css", "tufte"]
