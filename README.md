@@ -90,6 +90,7 @@ You can add links to your social media profile by using thoses parameters:
 - `github`: string
 - `gitlab`: string
 - `twitter`: string
+- `linkedin`: string
 - `patreon`: string
 - `youtube`: string
 - `medium`: string

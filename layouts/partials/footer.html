@@ -18,6 +18,10 @@
   {{ if isset .Site.Params "twitter" }}
   <li><a href="https://twitter.com/{{.Site.Params.twitter}}">Twitter</a></li>
   {{ end }}
+  
+  {{ if isset .Site.Params "linkedin" }}
+  <li><a href="https://linkedin.com/in/{{.Site.Params.linkedin}}">LinkedIn</a></li>
+  {{ end }}
 
   {{ if isset .Site.Params "github" }}
   <li><a href="https://github.com/{{.Site.Params.github}}">GitHub</a></li>
