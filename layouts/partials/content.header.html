@@ -13,7 +13,12 @@
   {{- end -}}
 
   {{- if not .Params.hidedate -}}
-  <p class="date">{{ .Date.Format "2006-01-02" }}</p>
+  <p class="date">
+    {{ if .Site.Params.dateFormatLong }}
+      {{ .Date.Format .Site.Params.dateFormatLong }}
+    {{ else }}
+      {{ .Date.Format "2006-01-02" }}
+    {{ end }}</p>
   {{- end -}}
 
   {{- if not .Params.hidereadtime -}}

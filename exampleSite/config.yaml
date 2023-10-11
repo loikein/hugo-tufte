@@ -38,6 +38,10 @@ params:
   # copyrightHolder: Copyright Holder
   # Show the "Powered by Hugo-Tufte and Hugo."
   showPoweredBy: false
+  # The format to use for short dates shown in lists of posts. Defaults to "Jan 02"
+  dateFormatShort: "Jan 02"
+  # The format to use for dates on posts. Defaults to "2006-01-02"
+  dateFormatLong: "2006-01-02"
   # Site wide kill switch for date in pages
   hidedate: false
   # Site wide kill switch for post summary on home page
