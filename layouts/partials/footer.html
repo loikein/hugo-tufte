@@ -1,96 +1,59 @@
 <footer class="page-footer">
-<hr />
+    <hr />
 
-<div class="previous-post" style="display:inline-block;">
-  {{ if .PrevPage }}
-  <a class="link-reverse" href="{{ .PrevPage.Permalink }}?ref=footer">« {{ .PrevPage.Title | truncate 50 "..."}}</a>
-  {{ end }}
-</div>
+    <div class="previous-post" style="display:inline-block;">
+        {{ if .Prev }}
+        <a class="link-reverse" href="{{ .Prev.Permalink }}?ref=footer">« {{ .Prev.Title | truncate 50 "..."}}</a> {{ end }}
+    </div>
 
-<div class="next-post", style="display:inline-block;float:right;">
-  {{ if .NextPage }}
-  <a class="link-reverse" href="{{ .NextPage.Permalink }}?ref=footer">{{ .NextPage.Title | truncate 50 "..." }} »</a>
-  {{ end }}
-</div>
+    <div class="next-post" , style="display:inline-block;float:right;">
+        {{ if .Next }}
+        <a class="link-reverse" href="{{ .Next.Permalink }}?ref=footer">{{ .Next.Title | truncate 50 "..." }} »</a> {{ end }}
+    </div>
 
-<ul class="page-footer-menu">
-  {{/* SOCIALS */}}
-  {{ if isset .Site.Params "twitter" }}
-  <li><a href="https://twitter.com/{{.Site.Params.twitter}}">Twitter</a></li>
-  {{ end }}
-  
-  {{ if isset .Site.Params "linkedin" }}
-  <li><a href="https://linkedin.com/in/{{.Site.Params.linkedin}}">LinkedIn</a></li>
-  {{ end }}
+    <ul class="page-footer-menu">
+        {{/* SOCIALS */}} {{ if isset .Site.Params "twitter" }}
+        <li><a href="https://twitter.com/{{.Site.Params.twitter}}">Twitter</a></li>
+        {{ end }} {{ if isset .Site.Params "linkedin" }}
+        <li><a href="https://linkedin.com/in/{{.Site.Params.linkedin}}">LinkedIn</a></li>
+        {{ end }} {{ if isset .Site.Params "github" }}
+        <li><a href="https://github.com/{{.Site.Params.github}}">GitHub</a></li>
+        {{ end }} {{ if isset .Site.Params "gitlab" }}
+        <li><a href="https://gitlab.com/{{.Site.Params.gitlab}}">GitLab</a></li>
+        {{ end }} {{ if isset .Site.Params "patreon" }}
+        <li><a href="https://www.patreon.com/{{.Site.Params.patreon}}">Patreon</i></a></li>
+        {{ end }} {{ if isset .Site.Params "youtube" }}
+        <li><a href="https://www.youtube.com/{{.Site.Params.youtube}}">YouTube</a></li>
+        {{ end }} {{ if isset .Site.Params "medium" }}
+        <li><a href="https://medium.com/{{.Site.Params.medium}}">Medium</a></li>
+        {{ end }} {{ if isset .Site.Params "reddit" }}
+        <li><a href="https://www.reddit.com/user/{{.Site.Params.reddit}}">Reddit</a></li>
+        {{ end }} {{ if isset .Site.Params "stackoverflow" }}
+        <li><a href="https://stackoverflow.com/users/{{.Site.Params.stackoverflow}}?tab=profile">StackOverflow</a></li>
+        {{ end }} {{ if isset .Site.Params "instagram" }}
+        <li><a href="https://www.instagram.com/{{.Site.Params.instagram}}">Instagram</a></li>
+        {{ end }} {{ if isset .Site.Params "mastodon" }}
+        <li><a href="https://{{.Site.Params.mastodon}}">Mastodon</a></li>
+        {{ end }} {{ if isset .Site.Params "orcid" }}
+        <li><a href="https://orcid.org/{{.Site.Params.orcid}}">ORCID</a></li>
+        {{ end }} {{ if isset .Site.Params "google_scholar" }}
+        <li><a href="https://scholar.google.com/citations?user={{.Site.Params.google_scholar}}">Google Scholar</a></li>
+        {{ end }} {{/* END SOCIALS */}} {{ range .Site.Menus.footer }}
+        <li><a href="{{.URL}}">{{.Pre }} {{ .Name }}</a></li>
+        {{ end }}
+    </ul>
 
-  {{ if isset .Site.Params "github" }}
-  <li><a href="https://github.com/{{.Site.Params.github}}">GitHub</a></li>
-  {{ end }}
-
-  {{ if isset .Site.Params "gitlab" }}
-  <li><a href="https://gitlab.com/{{.Site.Params.gitlab}}">GitLab</a></li>
-  {{ end }}
-
-  {{ if isset .Site.Params "patreon" }}
-  <li><a href="https://www.patreon.com/{{.Site.Params.patreon}}">Patreon</i></a></li>
-  {{ end }}
-
-  {{ if isset .Site.Params "youtube" }}
-  <li><a href="https://www.youtube.com/{{.Site.Params.youtube}}">YouTube</a></li>
-  {{ end }}
-
-  {{ if isset .Site.Params "medium" }}
-  <li><a href="https://medium.com/{{.Site.Params.medium}}">Medium</a></li>
-  {{ end }}
-
-  {{ if isset .Site.Params "reddit" }}
-  <li><a href="https://www.reddit.com/user/{{.Site.Params.reddit}}">Reddit</a></li>
-  {{ end }}
-
-  {{ if isset .Site.Params "stackoverflow" }}
-  <li><a href="https://stackoverflow.com/users/{{.Site.Params.stackoverflow}}?tab=profile">StackOverflow</a></li>
-  {{ end }}
-
-  {{ if isset .Site.Params "instagram" }}
-  <li><a href="https://www.instagram.com/{{.Site.Params.instagram}}">Instagram</a></li>
-  {{ end }}
-
-  {{ if isset .Site.Params "mastodon" }}
-  <li><a href="https://{{.Site.Params.mastodon}}">Mastodon</a></li>
-  {{ end }}
-
-  {{ if isset .Site.Params "orcid" }}
-  <li><a href="https://orcid.org/{{.Site.Params.orcid}}">ORCID</a></li>
-  {{ end }}
-
-  {{ if isset .Site.Params "google_scholar" }}
-  <li><a href="https://scholar.google.com/citations?user={{.Site.Params.google_scholar}}">Google Scholar</a></li>
-  {{ end }}
-  {{/* END SOCIALS */}}
-  {{ range .Site.Menus.footer }}
-    <li><a href="{{.URL}}">{{.Pre }} {{ .Name }}</a></li>
-  {{ end }}
-</ul>
-
-{{ if .Site.Params.showPoweredBy}}
-<p>
-  Powered by <a href="https://gohugo.io">Hugo</a> and the
-  <a href="https://github.com/loikein/hugo-tufte">Tufte theme</a>.
-</p>
-{{ end }}
-
-{{ if or ( isset .Site.Params "copyright" ) ( isset .Site.Params "copyrightHolder" ) }}
-<div class="copyright">
-<p>
-  {{ with .Site.Params.copyright }}
-  {{ . | safeHTML }}
-  {{ else }}
-  &copy; {{now.Format "2006"}}
-  {{ with .Site.Params.copyrightHolder }}{{ . }}{{end}}.
-  All rights reserved.
-  {{end}}
-</p>
-</div>
-{{ end }}
+    {{ if .Site.Params.showPoweredBy}}
+    <p>
+        Powered by <a href="https://gohugo.io">Hugo</a> and the
+        <a href="https://github.com/loikein/hugo-tufte">Tufte theme</a>.
+    </p>
+    {{ end }} {{ if or ( isset .Site.Params "copyright" ) ( isset .Site.Params "copyrightHolder" ) }}
+    <div class="copyright">
+        <p>
+            {{ with .Site.Params.copyright }} {{ . | safeHTML }} {{ else }} &copy; {{now.Format "2006"}} {{ with .Site.Params.copyrightHolder }}{{ . }}{{end}}. All rights reserved. {{end}}
+        </p>
+    </div>
+    {{ end }}
 
 </footer>
