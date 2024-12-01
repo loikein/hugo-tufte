@@ -16,7 +16,12 @@
       {{ range .Pages }}
       <ul>
       <li>
-        <span class="list-date">{{ .Date.Format "Jan 2" }} &middot;</span>
+        <span class="list-date">
+          {{ if .Site.Params.dateFormatShort }}
+            {{ .Date.Format .Site.Params.dateFormatShort }}
+          {{ else }}
+            {{ .Date.Format "Jan 2" }}
+          {{ end }} &middot;</span>
         <a href="{{ .RelPermalink }}">{{.Title}}</a>
       </li>
       </ul>
