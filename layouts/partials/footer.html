@@ -2,14 +2,14 @@
 <hr />
 
 <div class="previous-post" style="display:inline-block;">
-  {{ if .PrevPage }}
-  <a class="link-reverse" href="{{ .PrevPage.Permalink }}?ref=footer">« {{ .PrevPage.Title | truncate 50 "..."}}</a>
+  {{ if .Prev }}
+  <a class="link-reverse" href="{{ .Prev.Permalink }}?ref=footer">« {{ .Prev.Title | truncate 50 "..."}}</a>
   {{ end }}
 </div>
 
 <div class="next-post", style="display:inline-block;float:right;">
-  {{ if .NextPage }}
-  <a class="link-reverse" href="{{ .NextPage.Permalink }}?ref=footer">{{ .NextPage.Title | truncate 50 "..." }} »</a>
+  {{ if .Next }}
+  <a class="link-reverse" href="{{ .Next.Permalink }}?ref=footer">{{ .Next.Title | truncate 50 "..." }} »</a>
   {{ end }}
 </div>
 
